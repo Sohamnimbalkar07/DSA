@@ -1,0 +1,36 @@
+For AWS cloud------------------------------
+
+sign in AWS account,create a instance and choose linux os and set security rules and launch the instance .
+after launching the the instance connect it...
+
+1.git clone
+2.goto cloned repo mysite folder
+# Now Run the following Commands to setup
+1.sudo apt update
+2.sudo apt install npm
+3.sudo apt install nodejs
+4.npm install express
+5.node server.js    <--to get port number and check your website on local host..-->
+6.on successful launch of express application on port 8888 tyr to access website using public IP address and port 8888 using chrome
+------------------------------------------------------------------------------------------------------------------------------------
+
+------------------For Putty client server--------------------------------
+
+
+download Putty
+1.sudo apt update
+2.git -v
+3.git clone <repo path>
+4.cd <cloned folder name>
+5.docker -v  <--to check docker installed or not--> if not installed then next step
+     a.sudo apt install docker.io
+     b.docker -v
+6.sudo systemctl status docker <--page will not exit automatically so CTRL+C-->
+7.sudo docker build -t <page-name> .   (this dot is compulsory)     <---pagename_eg.nodewebapp-->
+8.sudo docker images
+9.sudo docker run -d -p 8888:8888 nodewebapp(page_name)
+
+
+
+now copy public ip address of running instance and paste on browser
+https://<ip>:8888
