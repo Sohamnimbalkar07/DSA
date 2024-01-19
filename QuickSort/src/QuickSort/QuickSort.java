@@ -9,7 +9,7 @@ public class QuickSort {
 	{
 		int temp = arr[x];
 		arr[x] = arr[y];
-		arr[y] = x;
+		arr[y] = temp;
 		
 	}
 	
@@ -17,17 +17,17 @@ public class QuickSort {
 	{
 		if(left>= right)
 			return;
-		int i = left;
+		int i = 0;
 		int j = right;
 		
-		while(j < i)
+		while(i < j)
 		{
 		
 		while( i <= right && arr[i] <= arr[left])
 		{
 			i++;
 		}
-		while(arr[j] > arr[right])
+		while(arr[j] > arr[left])
 		{
 			j--;
 		}
@@ -47,8 +47,8 @@ public class QuickSort {
 	}
 	public static void main(String[] args) {
 	
-		int [] arr = {5, 3, 9, 1, 8, 7, 2, 6, 4};
-        //int[] arr = {4, 3, 2, 1};
+		//int [] arr = {5, 3, 9, 1, 8, 7, 2, 6, 4};
+        int[] arr = {4, 3, 2, 1};
 		System.out.println(Arrays.toString(arr));
 		quickSort(arr, 0, arr.length-1);
 		System.out.println(Arrays.toString(arr));
