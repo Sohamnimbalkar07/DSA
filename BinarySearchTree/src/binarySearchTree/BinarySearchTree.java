@@ -54,17 +54,17 @@ public class BinarySearchTree {
 		while(true)
 		{
 		if(trav.data > val)
-			{   
-				if(trav.left != null)
-			    {
-				trav = trav.left;
-			    }
-				else
-			   {
-				trav.left = newNode;
-				break;
-				}
-			}
+		{   
+			if(trav.left != null)
+			  {
+			   trav = trav.left;
+			  }
+			else
+			  {
+			   trav.left = newNode;
+			   break;
+			  }
+		}
 			
 			else
 			{     //if(trav.data <= val )
@@ -162,7 +162,7 @@ public class BinarySearchTree {
 			trav = s.pop();
 			System.out.print(trav.data + ", ");
 			trav = trav.right;
-		}
+		} 
 		}
 		System.out.println();
 	}
@@ -307,6 +307,50 @@ public class BinarySearchTree {
 		return new Node[] { null, null };
 	}
 	
+	public void delete(int val) {
+		Node trav, parent;
+		// find the node to be deleted along with its parent
+		Node[] arr = binarySearchWithParent(val);
+		trav = arr[0];
+		parent = arr[1];
+		// if node is not found, throw the exception
+		if(trav == null)
+			throw new RuntimeException("Node not found.");
+		// if node has left as well as right child
+		if(trav.left != null && trav.right != null) {
+			// find its successor with its parent
+			parent = trav;
+			Node succ = trav.right;
+			while(succ.left != null) {
+				parent = succ;
+				succ = succ.left;
+			}
+			// overwrite data of node with successor data
+			trav.data = succ.data;
+			// mark successor node to be deleted
+			trav = succ;
+		}
+		// if node has right child (or node doesn't have left child)
+		if(trav.left == null) {
+			if(trav == root)
+				root = trav.right;
+			else if(trav == parent.left)
+				parent.left = trav.right;
+			else
+				parent.right = trav.right;
+		}
+		// if node has left child (or node doesn't have right child)
+		else if(trav.right == null) {
+			if(trav == root)
+				root = trav.left;
+			else if(trav == parent.left)
+				parent.left = trav.left;
+			else
+				parent.right = trav.left;			
+		}
+	}
+
+	
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
 		BinarySearchTree t = new BinarySearchTree();
@@ -358,7 +402,7 @@ public class BinarySearchTree {
 		else // node found with parent
 			System.out.println("BS: Found: " + arr[0].getData() + " with Parent: " + arr[1].getData());
 		
-		t.deleteAll();
+		t.delete(90);
 		t.preorder();
 		System.out.println("Height: " + t.height());
 
