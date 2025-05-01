@@ -20,11 +20,26 @@ This repository contains **Java implementations** of common **Data Structures an
 
 ---
 
+### 🔗 Linked Lists
+- **Singly Linked List** – Supports **insertion at head**, **insertion at tail**, **insertion at any position**, **deletion**, and **traversal**.
+- **Doubly Linked List** – Allows **insertion and deletion** from both ends, **insertion at any position**, and **bidirectional traversal**.
+
+---
+
 ### 🌳 Tree Data Structures
-- **Binary Search Tree (BST)** – A tree that maintains **sorted order**. Supports **insertion** and **deletion** of nodes.
-- **Tree Traversals** – Implements **preorder**, **inorder**, and **postorder** traversals (**recursive** and **iterative** versions).
-- **Tree Search** – Includes **breadth-first (level-order)** and **depth-first search** on the BST.
-- **Tree Height** – Computes the **height (maximum depth)** of the BST.
+#### **Binary Search Tree (BST)**
+- **Insertion & Deletion** of nodes while maintaining the BST property.
+- **Recursive & Non-Recursive Traversals**:
+  - Preorder
+  - Inorder
+  - Postorder
+- **Search Techniques**:
+  - **Binary Search**
+  - **Breadth-First Search (BFS)**
+  - **Depth-First Search (DFS)**
+- **Height Calculation** – Computes the **maximum depth** of the tree.
+- **Delete with Parent Tracking** – Useful for safer node deletion.
+- **Delete All** – Recursively deletes all nodes (post-order cleanup).
 
 ---
 
@@ -32,6 +47,16 @@ This repository contains **Java implementations** of common **Data Structures an
 - **Linear Queue** – A simple queue using an **array** with **enqueue**, **dequeue**, and **peek** operations using **front** and **rear** pointers.
 - **Circular Queue** – An **array-based circular buffer** that wraps around to use space efficiently.
 - **Queue Using Two Stacks** – Implements a queue using **two stacks** to manage **enqueue** and **dequeue** operations.
+
+---
+
+### 🧱 Stack Data Structure
+- **Stack Implementation** – A classic **LIFO (Last-In-First-Out)** structure built using **arrays**.  
+  Supports:
+  - `push` – Add an element to the top
+  - `pop` – Remove the top element
+  - `peek` – View the top element without removing it
+  - `isEmpty` – Check if the stack is empty
 
 ---
 
